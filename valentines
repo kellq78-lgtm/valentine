@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffccd5, #ffe6f0);
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 60px;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 2.5em;
+    }
+
+    .buttons {
+      position: relative;
+      margin-top: 40px;
+      height: 200px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      font-size: 30px;
+      padding: 20px 50px;
+      background-color: #ff4d88;
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #no {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #ccc;
+      color: black;
+      top: 100px;
+      left: 55%;
+    }
+
+    #gif {
+      display: none;
+      margin-top: 30px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="showLove()">YES 💕</button>
+    <button id="no" onmouseover="runAway()">No</button>
+  </div>
+
+  <div id="gif">
+    <h2>I LOVE YOU 💙</h2>
+    <img src="valentine.gif" alt="I love you gif">
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("gif").style.display = "block";
+    }
+
+    function runAway() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
